@@ -57,3 +57,5 @@ names(merged2) <- gsub("^f", "frequency", names(merged2))
 Tidydata <- merged2 %>%
   +     group_by(subjectID, activity) %>%
   +     summarise_all(funs(mean))
+
+write.table(Tidydata, file = "Tidy.txt", row.names = FALSE)
